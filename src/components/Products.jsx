@@ -1,8 +1,7 @@
-// Products.jsx
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Grid } from "@mui/material"; // Удаляем импорт компонента Pagination
 import { styled } from "@mui/system";
-import { Link } from "react-router-dom"; // Добавленный импорт
+import { Link } from "react-router-dom";
 
 const ProductsContainer = styled(Grid)(({ theme }) => ({
   padding: "0 16px",
@@ -48,34 +47,34 @@ const Products = () => {
   }, []);
 
   return (
-    <ProductsContainer
-      container
-      spacing={4}
-      justifyContent="center"
-      alignItems="flex-start"
-      style={{ minHeight: "100vh" }}
-    >
-      {products.map((product) => (
-        <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-          <StyledCard component={Link} to={`/product/${product.id}`}>
-            {" "}
-            {/* Исправленный компонент Link */}
-            <StyledCardMedia image={product.image} alt={product.title} />
-            <StyledCardContent>
-              <StyledTypography gutterBottom variant="h5" component="div">
-                {product.title}
-              </StyledTypography>
-              <StyledTypography variant="body2" color="text.secondary">
-                {product.description}
-              </StyledTypography>
-              <StyledTypography variant="h6" color="text.primary">
-                ${product.price}
-              </StyledTypography>
-            </StyledCardContent>
-          </StyledCard>
-        </Grid>
-      ))}
-    </ProductsContainer>
+    <>
+      <ProductsContainer
+        container
+        spacing={4}
+        justifyContent="center"
+        alignItems="flex-start"
+        style={{ minHeight: "100vh" }}
+      >
+        {products.map((product) => (
+          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+            <StyledCard component={Link} to={`/product/${product.id}`}>
+              <StyledCardMedia image={product.image} alt={product.title} />
+              <StyledCardContent>
+                <StyledTypography gutterBottom variant="h5" component="div">
+                  {product.title}
+                </StyledTypography>
+                <StyledTypography variant="body2" color="text.secondary">
+                  {product.description}
+                </StyledTypography>
+                <StyledTypography variant="h6" color="text.primary">
+                  ${product.price}
+                </StyledTypography>
+              </StyledCardContent>
+            </StyledCard>
+          </Grid>
+        ))}
+      </ProductsContainer>
+    </>
   );
 };
 

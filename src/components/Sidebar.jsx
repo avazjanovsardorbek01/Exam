@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
-import AssignmentIcon from "@mui/icons-material/Assignment";
+import AssignmentIcon from "@mui/icons-material/Assignment"; // Add an icon for Cards
 
 const Sidebar = ({ sidebarToggle }) => {
   const drawerWidth = 240;
@@ -38,7 +38,12 @@ const Sidebar = ({ sidebarToggle }) => {
           </ListItemIcon>
           <ListItemText primary="Products" />
         </ListItem>
-        <ListItem button component={Link} to="/product/1">
+        <ListItem
+          button
+          component={Link}
+          to="/product/1"
+          sx={{ display: "none" }}
+        >
           <ListItemIcon sx={{ color: "#fff" }}>
             <CreditCardIcon />
           </ListItemIcon>
