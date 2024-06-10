@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,7 +7,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Products from "./components/Products";
-import ProductDetails from "./components/ProductDetails"; // Измененный импорт
+import ProductDetails from "./components/ProductDetails";
+import Cards from "./components/Cards";
 import theme from "./Theme";
 
 function App() {
@@ -36,8 +36,8 @@ function App() {
             <Toolbar />
             <Routes>
               <Route path="/products" element={<Products />} />
-              <Route path="/product/:id" element={<ProductDetails />} />{" "}
-              {/* Исправленный путь */}
+              <Route path="/product/:id" element={<ProductDetails />} />
+              <Route path="/cards" element={<Cards />} />
             </Routes>
           </Box>
         </Box>

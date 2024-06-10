@@ -63,7 +63,7 @@ const Navbar = ({ setSidebarToggle, sidebarToggle, onSearch }) => {
       position="fixed"
       sx={{
         zIndex: (theme) => theme.zIndex.drawer + 1,
-        backgroundColor: "#333",
+        backgroundColor: "#4726A2", // Updated color
       }}
     >
       <Toolbar>

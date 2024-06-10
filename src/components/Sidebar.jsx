@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
+import AssignmentIcon from "@mui/icons-material/Assignment";
 
 const Sidebar = ({ sidebarToggle }) => {
   const drawerWidth = 240;
@@ -24,7 +25,7 @@ const Sidebar = ({ sidebarToggle }) => {
         [`& .MuiDrawer-paper`]: {
           width: drawerWidth,
           boxSizing: "border-box",
-          backgroundColor: "#333",
+          backgroundColor: "#4726A2", // Updated color
           color: "#fff",
         },
       }}
@@ -37,12 +38,17 @@ const Sidebar = ({ sidebarToggle }) => {
           </ListItemIcon>
           <ListItemText primary="Products" />
         </ListItem>
-        {/* Добавляем ссылку на страницу SinglePage */}
         <ListItem button component={Link} to="/product/1">
           <ListItemIcon sx={{ color: "#fff" }}>
             <CreditCardIcon />
           </ListItemIcon>
           <ListItemText primary="Single Page" />
+        </ListItem>
+        <ListItem button component={Link} to="/cards">
+          <ListItemIcon sx={{ color: "#fff" }}>
+            <AssignmentIcon />
+          </ListItemIcon>
+          <ListItemText primary="Cards" />
         </ListItem>
       </List>
     </Drawer>
